@@ -1,0 +1,70 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Trip Details</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+
+    <!-- <ion-card class="welcome-card">
+      <ion-img src="/assets/shapes.svg"></ion-img>
+      <ion-card-header>
+        <ion-card-subtitle>Get Started</ion-card-subtitle>
+        <ion-card-title>Welcome to Ionic</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <p>Now that your app has been created, you'll want to start building out features and components. Check out some of the resources below for next steps.</p>
+      </ion-card-content>
+    </ion-card> -->
+    <div class = "card">
+      <div class = "item item-avatar">
+         <img src = "https://images.unsplash.com/photo-1476610182048-b716b8518aae?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1427&q=80">
+         <h2>Card Name</h2>
+      </div>
+   
+      <div class = "item item-body">
+         <img class = "full-image" src = "">
+         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eget 
+         pharetra tortor. Proin quis eros imperdiet, facilisis nisi in, tincidunt orci. 
+         Nam tristique elit massa, quis faucibus augue finibus ac.
+      </div>
+   </div>
+
+    <ion-list lines="none">
+        <ion-list-header>
+          <ion-label>Trips</ion-label>
+        </ion-list-header>
+        <ion-item>
+            <ion-label  routerLink="">{{ trip | json }}</ion-label>
+        </ion-item>
+        <!-- <ion-item href="https://ionicframework.com/docs/">
+          <ion-icon slot="start" color="medium" name="book"></ion-icon>
+          <ion-label>Ionic Documentation</ion-label>
+        </ion-item>
+        <ion-item href="https://ionicframework.com/docs/building/scaffolding">
+          <ion-icon slot="start" color="medium" name="build"></ion-icon>
+          <ion-label>Scaffold Out Your App</ion-label>
+        </ion-item>
+        <ion-item href="https://ionicframework.com/docs/layout/structure">
+          <ion-icon slot="start" color="medium" name="grid"></ion-icon>
+          <ion-label>Change Your App Layout</ion-label>
+        </ion-item>
+        <ion-item href="https://ionicframework.com/docs/theming/basics">
+          <ion-icon slot="start" color="medium" name="color-fill"></ion-icon>
+          <ion-label>Theme Your App</ion-label>
+        </ion-item> -->
+      </ion-list>
+  
+      <!-- <ul class="trips">
+        <li *ngFor="let trip of trips">
+          <a routerLink="/detail/{{trip.id}}">
+            <span class="badge">{{trip.id}}</span> {{trip.name}}, {{trip.city}}
+          </a>
+           <button class="delete" title="delete hero"
+            (click)="delete(hero)">x</button>
+        </li>
+      </ul> -->
+  
+  </ion-content>
+  

@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { TabsPage } from './tabs.page';
+import { AuthenticationService } from '../authentication.service';
 
 const routes: Routes = [
   {
@@ -13,7 +14,15 @@ const routes: Routes = [
           {
             path: '',
             loadChildren: '../tab1/tab1.module#Tab1PageModule'
-          }
+          },
+          { path: 'trip/location/:id',loadChildren: '../trips/trips.module#TripsPageModule'},
+          { path: 'trips', loadChildren: '../trips/trips.module#TripsPageModule' },
+          { path: 'trip/:id', loadChildren: '../trip-detail/trip-detail.module#TripDetailPageModule' }
+          // { path: 'locations',   loadChildren: './tab1/tab1.module#Tab1PageModule' },
+          // { path: 'trip/location/:id',loadChildren: './trips/trips.module#TripsPageModule'},
+          // { path: 'trips', loadChildren: './trips/trips.module#TripsPageModule' },
+          // { path: 'trip/:id', loadChildren: './trip-detail/trip-detail.module#TripDetailPageModule' },
+          // { path: 'theme', loadChildren: './theme/theme.module#ThemePageModule' }
         ]
       },
       {
@@ -31,6 +40,15 @@ const routes: Routes = [
           {
             path: '',
             loadChildren: '../tab3/tab3.module#Tab3PageModule'
+          }
+        ]
+      },
+      {
+        path: 'tab4',
+        children: [
+          {
+            path: '',
+            loadChildren: '../tab4/tab4.module#Tab4PageModule'
           }
         ]
       },
@@ -54,4 +72,6 @@ const routes: Routes = [
   ],
   exports: [RouterModule]
 })
-export class TabsPageRoutingModule {}
+export class TabsPageRoutingModule {
+  }
+

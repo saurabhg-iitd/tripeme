@@ -1,5 +1,7 @@
 {
   "name": "tripeme",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

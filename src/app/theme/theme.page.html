@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>theme</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+    <h2>Themes</h2>
+
+    <div>
+      <label>Name:
+        <input #name />
+      </label>
+      <label>Description:
+          <input #description />
+        </label>
+      <!-- (click) passes input value to add() and then clears the input -->
+      <button (click)="add(name.value,description.value );">
+        add
+      </button>
+    </div>
+    
+    <ul class="themes">
+      <li *ngFor="let theme of themes">
+        <!-- <a routerLink="/detail/{{hero.id}}"> -->
+          <span class="badge">{{theme.id}}</span> {{theme.name}}
+        <!-- </a> -->
+        <button class="delete" title="delete theme"
+          (click)="delete(theme)">x</button>
+      </li>
+    </ul>
+    
+    
+    <!-- 
+    Copyright Google LLC. All Rights Reserved.
+    Use of this source code is governed by an MIT-style license that
+    can be found in the LICENSE file at http://angular.io/license
+    -->
+</ion-content>
+
+
