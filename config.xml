@@ -80,13 +80,17 @@
     <plugin name="cordova-plugin-statusbar" spec="2.4.2" />
     <plugin name="cordova-plugin-device" spec="2.0.2" />
     <plugin name="cordova-plugin-splashscreen" spec="5.0.2" />
-    <plugin name="cordova-plugin-ionic-webview" spec="^3.0.0" />
     <plugin name="cordova-plugin-ionic-keyboard" spec="^2.0.5" />
     <plugin name="cordova-plugin-googleplus" spec="https://github.com/EddyVerbruggen/cordova-plugin-googleplus">
         <variable name="REVERSED_CLIENT_ID" value="com.googleusercontent.apps.708238941640-ku3asp6fvvn19fajhhllsn4bv9dh1tnj" />
         <variable name="WEB_APPLICATION_CLIENT_ID" value="708238941640-2gk1fqo1fpthkpbghpv3500m07g0r1m2.apps.googleusercontent.com" />
         <variable name="PLAY_SERVICES_VERSION" value="11.8.0" />
     </plugin>
+    <plugin name="cordova-plugin-ionic-webview" spec="^3.1.2" />
+    <plugin name="cordova-plugin-filepath" spec="~1.5.1" />
+    <plugin name="cordova-plugin-camera" spec="~4.0.3" />
+    <plugin name="cordova-plugin-file-transfer" spec="~1.7.1" />
+    <plugin name="cordova-plugin-file" spec="~6.0.1" />
     <engine name="android" spec="~7.1.4" />
     <engine name="browser" spec="~5.0.4" />
 </widget>

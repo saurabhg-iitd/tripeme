@@ -1,3 +1,14 @@
 <ion-app>
+     <ion-header>
+        <ion-toolbar>
+            <ion-buttons slot="primary">
+              <ion-button (click)="home()">
+                <ion-icon name="home"></ion-icon>
+              </ion-button>
+            </ion-buttons>
+            <ion-title text-left>{{globalData.getTitle()}}</ion-title>
+          </ion-toolbar>
+
+     </ion-header>
   <ion-router-outlet></ion-router-outlet>
 </ion-app>

@@ -17,7 +17,7 @@
         <p>Now that your app has been created, you'll want to start building out features and components. Check out some of the resources below for next steps.</p>
       </ion-card-content>
     </ion-card> -->
-    <div class = "card">
+    <!-- <div class = "card">
       <div class = "item item-avatar">
          <img src = "https://images.unsplash.com/photo-1476610182048-b716b8518aae?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1427&q=80">
          <h2>Card Name</h2>
@@ -29,7 +29,13 @@
          pharetra tortor. Proin quis eros imperdiet, facilisis nisi in, tincidunt orci. 
          Nam tristique elit massa, quis faucibus augue finibus ac.
       </div>
-   </div>
+   </div> -->
+
+   <ion-slides pager="true" [options]="slideOpts">
+    <ion-slide *ngFor="let image of images;">
+      <img src="{{image.url}}">
+    </ion-slide>
+  </ion-slides>
 
     <ion-list lines="none">
         <ion-list-header>
@@ -65,6 +71,13 @@
             (click)="delete(hero)">x</button>
         </li>
       </ul> -->
+
+  
+       <input ng-model="numBookings" type="number"  min="1" max=30  required>
+
+      <button (click)="book()">
+        add
+      </button>
   
   </ion-content>
   

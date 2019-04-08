@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>resource</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+   <ion-list *ngIf="resource">
+    <ion-item >
+        <ion-label>Caption</ion-label>
+        <ion-input type="text" [(ngModel)]="resource.imageCaption"></ion-input>
+  </ion-item>
+  <ion-item >
+        <ion-img [src]="resource.imageUrl"></ion-img>
+    </ion-item>
+  </ion-list>
+
+  <ion-item lines="none" >
+      <ion-button  (click)="update()" >Update Resource</ion-button>
+      <ion-button (click)="delete()" >Delete Resource</ion-button>
+      
+  </ion-item>
+  
+</ion-content>

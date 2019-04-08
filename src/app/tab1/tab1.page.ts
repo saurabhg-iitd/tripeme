@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Location } from "../location";
-import { LocationService } from '../location.service';
+import { Destination } from "../destination";
+import { DestinationService } from '../destination.service';
 import { AuthenticationService } from '../authentication.service';
 import { Router } from '@angular/router';
 
@@ -11,9 +11,9 @@ import { Router } from '@angular/router';
 })
 export class Tab1Page implements OnInit {
   isAdmin:boolean;
-  locations: Location[];
+  destinations: Destination[];
 
-  constructor(private locationService: LocationService, private authService:AuthenticationService, private router: Router) { }
+  constructor(private destinationService: DestinationService, private authService:AuthenticationService, private router: Router) { }
   ngOnInit(): void {
     if(localStorage.getItem(this.authService.sessionToken)==null || localStorage.getItem(this.authService.sessionToken)==""){
       this.router.navigate(['login']);
@@ -21,14 +21,14 @@ export class Tab1Page implements OnInit {
       this.isAdmin = JSON.parse(localStorage.getItem(this.authService.sessionToken)).admin;
       this.isAdmin=false;
       console.log("admin: "+this.isAdmin)
-      this.getLocations();
+      this.getDestinations();
     }
     // throw new Error("Method not implemented.");
   }
 
-  getLocations():void{
+  getDestinations():void{
     // this.trips=[{id:1,name:"Delhi"}];
-    this.locationService.getLocations().subscribe(locations => this.locations = locations);
+    this.destinationService.getTripDestinations().subscribe(res => this.destinations = res);
   }
 
   add(name: string, city:string, state:string,country:string): void {
@@ -38,9 +38,9 @@ export class Tab1Page implements OnInit {
     state =state.trim();
     country = state.trim();
     if (!name) { return; }
-    this.locationService.addLocation({ name, city,state,country } as Location)
-    .subscribe(location => {
-      this.locations.push(location);
+    this.destinationService.addDestination({ name, city,state,country } as Destination)
+    .subscribe(res => {
+      this.destinations.push(res);
     });
   }
 

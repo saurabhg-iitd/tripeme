@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { LocationService } from '../location.service';
+import { DestinationService } from '../destination.service';
 import { AuthenticationService } from '../authentication.service';
 import { Router } from '@angular/router';
 
@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class TabsPage {
   isAdmin:boolean
-  constructor(private locationService: LocationService, private authService:AuthenticationService, private router: Router) { }
+  constructor(private destinationService: DestinationService, private authService:AuthenticationService, private router: Router) { }
   ngOnInit(): void {
     if(localStorage.getItem(this.authService.sessionToken)==null || localStorage.getItem(this.authService.sessionToken)==""){
       this.router.navigate(['login']);

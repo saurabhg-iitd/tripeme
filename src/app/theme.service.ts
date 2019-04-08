@@ -24,7 +24,15 @@ export class ThemeService {
         return this.http.get<Theme[]>(this.baseUrl+"themes", httpOptions);
     }
 
+    getTheme(id:number): Observable<Theme> {
+        return this.http.get<Theme>(this.baseUrl+"theme/"+id, httpOptions);
+    }
+
     addTheme(theme: Theme): Observable<Theme> {
         return this.http.post<Theme>(this.baseUrl+"theme", theme, httpOptions);
+    }
+
+    updateTheme(theme:Theme,id:number): Observable<Theme> {
+        return this.http.post<Theme>(this.baseUrl+"theme/"+id, theme, httpOptions);
     }
 }

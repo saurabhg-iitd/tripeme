@@ -1,5 +1,8 @@
 export class Theme{
-    themeId:number;
+    id:number;
     name:string
     description:string;
+    active:boolean;
+    createdOn:Date;
+    updatedOn:Date;
 }

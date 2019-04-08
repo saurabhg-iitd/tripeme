@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>upload</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  
+  <!-- <form [formGroup]="todo" (ngSubmit)="logForm()"> -->
+  <ion-item>
+    <ion-label>Image Type</ion-label>
+    <ion-select placeholder="Select Image Type"  id="imageType"  [(ngModel)]="typeSelected" (ngModelChange)="onTypeSelect()">
+      <ion-select-option   *ngFor="let imageType of imageTypes; let i=index" [value]="imageTypes[i]"  >{{imageTypes[i].name}}</ion-select-option> 
+    </ion-select>
+  </ion-item>
+
+  <ion-item *ngIf="typeSelected">
+    <ion-label>Select Source</ion-label>
+    <ion-select placeholder="Select Source"  id="source"  [(ngModel)]="selectedSource" (ngModelChange)="onSourceSelect()">
+      <ion-select-option   *ngFor="let source of sources; let i=index" [value]="sources[i]">{{sources[i].name}}</ion-select-option> 
+    </ion-select>
+  </ion-item>
+
+  <ion-list *ngIf="resources">
+      <ion-list-header>
+           <div>Resources</div>
+      </ion-list-header>
+  <ion-item *ngFor="let resource of resources">
+    <ion-label (click)="goToResource(resource)">{{resource.imageCaption}}</ion-label>
+  </ion-item>
+  </ion-list>
+
+<ion-list *ngIf="selectedSource">
+    <ion-list-header>
+        <div>Upload</div>
+   </ion-list-header>
+  <ion-item>
+    <p>{{imageURI}}</p>
+    <button ion-button color="secondary" (click)="getImage()">Select Image</button>
+  </ion-item>
+  <ion-item *ngIf="imageURI">
+      <ion-label>Caption</ion-label>
+      <ion-input type="text" [(ngModel)]="caption"></ion-input>
+    </ion-item>
+  <!-- <ion-item>
+    <h4>Image Preview</h4>
+    <img src="{{imageFileName}}" *ngIf="imageFileName" alt="Ionic File" width="300" />
+  </ion-item>-->
+  <ion-item *ngIf="imageURI"> 
+    <button ion-button (click)="startUpload()" >Upload Image</button>
+  </ion-item>
+</ion-list>
+
+  <!-- <button ion-button type="submit" [disabled]="!todo.valid">Submit</button> -->
+  <!-- </form> -->
+
+  
+  
+</ion-content>

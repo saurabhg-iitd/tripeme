@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>destinations</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+    <ion-list lines="none">
+        <ion-item *ngFor="let d of destinations">
+            <ion-item>
+            <ion-label (click)="destinationDetails(d.id)" >{{d.id}}. {{d.name}}</ion-label>
+            </ion-item>
+            <ion-item>
+              <ion-checkbox [(ngModel)]="d.active" disabled="true"></ion-checkbox>
+            </ion-item>
+        </ion-item>
+    </ion-list>
+
+    <ion-item  lines="none">  
+      <ion-button (click)="addDestination()">Add Destination</ion-button>
+    </ion-item>
+
+</ion-content>
